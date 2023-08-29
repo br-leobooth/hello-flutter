@@ -74,15 +74,28 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             SafeArea(
               child: NavigationRail(
+                key: Key('keyNavbar'),
                 extended: constraints.maxWidth >= 600,
                 destinations: [
                   NavigationRailDestination(
-                    icon: Icon(Icons.home),
-                    label: Text('Home'),
+                    icon: Icon(
+                        key: Key('keyHomeNavIcon'),
+                        Icons.home
+                    ),
+                    label: Text(
+                        key: Key('keyHomeNavLabel'),
+                        'Home'
+                    ),
                   ),
                   NavigationRailDestination(
-                    icon: Icon(Icons.favorite),
-                    label: Text('Favorites'),
+                    icon: Icon(
+                        key: Key('keyFavoriteNavIcon'),
+                        Icons.favorite
+                    ),
+                    label: Text(
+                        key: Key('keyFavoriteNavLabel'),
+                        'Favorites'
+                    ),
                   ),
                 ],
                 selectedIndex: selectedIndex,
@@ -136,14 +149,20 @@ class GeneratorPage extends StatelessWidget {
                   appState.toggleFavorite();
                 },
                 icon: Icon(icon),
-                label: Text('Like'),
+                label: Text(
+                    key: Key('keyLikeButton'),
+                    'Like'
+                ),
               ),
               SizedBox(width: 10),
               ElevatedButton(
                 onPressed: () {
                   appState.getNext();
                 },
-                child: Text('Next'),
+                child: Text(
+                    key: Key('keyNextButton'),
+                    'Next'
+                ),
               ),
             ],
           ),
@@ -160,7 +179,10 @@ class FavoritesPage extends StatelessWidget {
 
     if (appState.favorites.isEmpty) {
       return Center(
-        child: Text('No favorites yet.'),
+        child: Text(
+            key: Key('keyNoFavorites'),
+            'No favorites yet.'
+        ),
       );
     }
 
@@ -189,10 +211,12 @@ class BigCard extends StatelessWidget {
     );
 
     return Card(
+      key: Key('keyWordCard'),
       color: theme.colorScheme.primary,
       child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Text(
+          key: Key('keyWordCardText'),
           pair.asLowerCase,
           style: style,
           semanticsLabel: "${pair.first} ${pair.second}",
