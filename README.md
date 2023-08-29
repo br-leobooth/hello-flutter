@@ -1,4 +1,4 @@
-# hello_flutter
+# hello-flutter
 
 A new Flutter project based on the "Your first Flutter app" codelab:
 https://codelabs.developers.google.com/codelabs/flutter-codelab-first#2
