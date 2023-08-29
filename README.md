@@ -5,7 +5,7 @@ https://codelabs.developers.google.com/codelabs/flutter-codelab-first#2
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is a starting point for a Flutter Android app.
 
 A few resources to get you started if this is your first Flutter project:
 
